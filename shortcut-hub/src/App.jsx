@@ -28,10 +28,10 @@ function Homepage() {
                     src={`icons/${tool.name.toLowerCase().replace(/ /g, '-')}.png`}
                     alt={tool.name}
                     className="tool-icon"
-                    style={{ width: '50px', height: '50px' }} // Resize the icon
+                    style={{ width: '90px', height: '90px' }} // Resize the icon
                   />
-                  <h3 className="tool-name" style={{ fontSize: '14px' }}>{tool.name}</h3> {/* Adjust font size */}
-                  <div className="platforms">
+                  <h3 className="tool-name" style={{ fontSize: '20px', marginTop: '9px' }}>{tool.name}</h3> {/* Adjust font size */}
+                  <div style={{marginTop:'15px'}}className="platforms">
                     <img
                       src="/appleicon.png"
                       alt="Apple"
