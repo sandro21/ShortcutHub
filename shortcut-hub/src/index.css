@@ -78,32 +78,34 @@ category {
   display: flex; /* Use Flexbox for consistent sizing */
   flex-wrap: wrap; /* Allow wrapping to the next row */
   justify-content: left; /* Center the cards */
-  gap: 20px; /* Space between cards */
+  gap: 16px; /* Space between cards */
   padding: 1rem;
 }
 
 .tool-card {
-  width: 200px; /* Fixed width for all cards */
-  height: 200px; /* Fixed height for all cards */
+  width: 160px; /* Fixed width for all cards */
+  height: 180px; /* Fixed height for all cards */
   background-color: var(--card-background);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 1rem;
   text-align: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 0 10px 3px rgb(0, 0, 0);
   cursor: pointer;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
 }
 .tool-card:hover {
   background-color: rgb(79, 34, 176);
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   filter: drop-shadow(0px 1px 3px white);
   box-shadow: inset 0 0 3px white;
 }
 
 .tool-card:hover .tool-icon {
-  filter: drop-shadow(0 0 10px white);
+  filter: drop-shadow(0 0 8px white);
   transition: filter 0.3s ease;
-  transform: scale(1.1); /* Slightly increase size on hover */
+  transform: scale(1.08); /* Slightly increase size on hover */
   transition: transform 0.3s ease;
 }
 
@@ -115,9 +117,9 @@ category {
 
 
 .tool-icon {
-  margin: 10px;
-  width: 80px;
-  height: 80px;
+  margin: 8px;
+  width: 70px;
+  height: 70px;
   object-fit: contain; /* Keep aspect ratio and fit inside box */
  /* Optional: Add background to fill the square */
   border-radius: 10px; /* Optional: Slight rounding for consistency */
@@ -126,7 +128,7 @@ category {
 
 
 .tool-name {
-  font-size: 1rem;
+  font-size: .8rem;
   margin: 10px 0;
 }
 
@@ -140,7 +142,16 @@ category {
 .platform {
   font-size: 0.9rem;
   background: #333;
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 5px;
   color: var(--text-color);
 }
+
+.divider {
+  border: none;
+  border-top: 2px solid white; /* White line */
+  margin: 1rem 0; /* Add spacing above and below the line */
+  opacity: 0.5; /* Slight transparency */
+}
+
+
