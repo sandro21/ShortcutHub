@@ -6,8 +6,15 @@ function Homepage() {
   return (
     <div className="container">
       <header>
-        <h1>Shortcut Hub</h1>
-        <p>Every shortcut for your favorite tools, centralized and searchable.</p>
+        <img
+          src="/icon.png"
+          alt="Shortcut Hub Logo"
+          className="logo"
+        />
+        <div>
+          <h1 style={{ marginBottom: '4px' }}>Shortcut Hub</h1>
+          <p style={{ marginTop: '0' }}>Every shortcut for your favorite tools, centralized and searchable.</p>
+        </div>
       </header>
 
       <div className="categories">

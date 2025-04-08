@@ -4,18 +4,28 @@
   --text-color: #ffffff;
   --card-background: #1e1e1e;
   --card-hover: #272727;
+  --text: 'Funnel Display', sans-serif; /* Funnel Display as the default font */
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
-  font-family: sans-serif;
+  font-family: var(--text); /* Use Funnel Display for the entire body */
 }
 
 header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px; /* Add spacing between items */
   padding: 2rem;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  padding-top: 15px; /* Adjust padding to center the logo vertically */
 }
 
 footer {
@@ -23,7 +33,7 @@ footer {
   padding: 2rem;
 }
 
-.category {
+category {
   margin: 2rem auto;
   width: 90%;
 }
@@ -34,13 +44,23 @@ footer {
   color: var(--primary-color);
 }
 
+.container {
+  max-width: 90%; /* Set a maximum width for the content */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 0 2rem; /* Add padding to the left and right sides */
+}
+
 .tool-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  display: flex; /* Use Flexbox for consistent sizing */
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  justify-content: left; /* Center the cards */
+  gap: 20px; /* Space between cards */
+  padding: 1rem;
 }
 
 .tool-card {
+  width: 200px; /* Fixed width for all cards */
+  height: 250px; /* Fixed height for all cards */
   background-color: var(--card-background);
   border-radius: 10px;
   padding: 1rem;
