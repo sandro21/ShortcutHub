@@ -1,0 +1,81 @@
+:root {
+  --background-color: #121212;
+  --primary-color: #bb86fc;
+  --text-color: #ffffff;
+  --card-background: #1e1e1e;
+  --card-hover: #272727;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+}
+
+.category {
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.category h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card:hover {
+  background-color: var(--card-hover);
+  transform: translateY(-5px);
+}
+
+.tool-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.tool-name {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.platform {
+  font-size: 0.9rem;
+  background: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--text-color);
+}

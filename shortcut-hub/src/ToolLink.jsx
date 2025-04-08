@@ -1,0 +1,1 @@
+//Represents an individual tool link within a category.
