@@ -28,11 +28,22 @@ function Homepage() {
                     src={`icons/${tool.name.toLowerCase().replace(/ /g, '-')}.png`}
                     alt={tool.name}
                     className="tool-icon"
+                    style={{ width: '50px', height: '50px' }} // Resize the icon
                   />
-                  <h3 className="tool-name">{tool.name}</h3>
+                  <h3 className="tool-name" style={{ fontSize: '14px' }}>{tool.name}</h3> {/* Adjust font size */}
                   <div className="platforms">
-                    <span className="platform"></span>
-                    <span className="platform">Windows</span>
+                    <img
+                      src="/appleicon.png"
+                      alt="Apple"
+                      className="platform-icon"
+                      style={{ width: '20px', height: '20px' }} // Resize platform icons
+                    />
+                    <img
+                      src="/windowsicon.png"
+                      alt="Windows"
+                      className="platform-icon"
+                      style={{ width: '18px', height: '18px', marginLeft: '-5px', marginTop: '2px' }} // Resize platform icons
+                    />
                   </div>
                 </div>
               ))}
