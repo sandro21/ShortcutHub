@@ -1,0 +1,88 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Add spacing between items */
+    padding: 2rem;
+  }
+  
+  header * {
+    cursor: pointer; /* Change cursor to hand on hover for all header elements */
+  }
+  
+  header *:hover {
+    filter: drop-shadow(2px 0 4px var(--primary-color));
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .logo {
+    width: 90px;
+    height: 90px;
+    padding-top: 15px; /* Adjust padding to center the logo vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1) rotate(10deg); /* Slight size increase and rotation */
+    filter: drop-shadow(0 0 15px var(--primary-color)); /* Natural glow effect */
+  }
+
+  .divider {
+    border: none;
+    border-top: 2px solid white; /* White line */
+    margin: 1rem 0; /* Add spacing above and below the line */
+    opacity: 0.5; /* Slight transparency */
+  }
+
+  .tool-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .tool-header img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .tool-header h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+
+  .shortcuts {
+    margin-top: 20px;
+  }
+  
+  .shortcuts h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+  
+  .shortcuts table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .shortcuts th, .shortcuts td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+    color: var(--text-color);
+  }
+  
+  .shortcuts th {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  .shortcuts tr:nth-child(even) {
+    background-color: #2a2a2a;
+  }
+  
+  .shortcuts tr:hover {
+    background-color: #444;
+  }
