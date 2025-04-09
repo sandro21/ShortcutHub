@@ -38,7 +38,7 @@ function Homepage() {
                       src={`icons/${tool.name.toLowerCase().replace(/ /g, '-')}.png`}
                       alt={tool.name}
                       className="tool-icon"
-                      style={{ width: '90px', height: '90px' }}
+                      style={{ width: '80px', height: '80px' }}
                     />
                     <h3 className="tool-name" style={{ fontSize: '18px', marginTop: '9px' }}>{tool.name}</h3>
                     <div style={{ marginTop: '15px' }} className="platforms">
