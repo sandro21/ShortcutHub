@@ -1,85 +1,116 @@
+/* Header Section */
+.header1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70%;
+  margin: 2rem 0 2rem 2rem;
+}
+
+.header1 * :hover {
+  cursor: pointer; /* Change cursor to hand on hover for all header elements */
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.header1 .logo {
+  width: 90px;
+  height: 90px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header1 .logo:hover {
+  transform: scale(1.1) rotate(10deg);
+  filter: drop-shadow(0 0 15px var(--primary-color));
+  cursor: pointer;
+}
+
 .tool-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .tool-logo {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .shortcuts-section {
-    margin-top: 30px;
-  }
-  
-  .shortcut-wrapper {
-    display: flex;
-    flex-direction: column;
-
-    margin-top: 20px;
-    align-items: center;
-  }
-  
-  .shortcut-row-separated {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--card-background);
-    padding: 14px 30px;
-    width: 60%;
-  }
-
-.shortcut-row-separated:not(.header) * {
-    font-size: 10%rem;
-}
-  .shortcut-row-separated.header {
-    font-weight: bold;
-    font-size: 1rem;
-    background: none;
-    box-shadow: none;
-  }
-
-.shortcut-row-separated:hover {
-    background-color: rgb(132, 0, 255, .50);
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  margin-top: 20px;
+  margin-right: -10px;
 }
 
-
-.shortcut-row-separated header * {
-    font-size: 1.5rem;
+.tool-header .tool-logo {
+  width: 75px;
+  height: 75px;
 }
 
-.shortcut-row-separated.header:hover {
-    background: none;
-    box-shadow: none;
-  }
+/* Divider */
+.divider {
+  border: none;
+  border-top: 2px solid white;
+  margin: 1rem 0;
+  opacity: 0.5;
+}
 
-  .shortcut-description {
-    flex: 1;
-    font-weight: 500;
-  }
-  
-  .shortcut-keys {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    min-width: 20px;
-    justify-content: space-between;
-  }
-  
-  .shortcut-mac,
-  .shortcut-win {
-    white-space: nowrap;
-  }
-  
-  .vertical-divider {
-    height: 100%;
-    width: 1px;
-    background-color: white;
-    opacity: 0.6;
-  }
-  
-  
-  
+/* Shortcuts Section */
+.shortcuts-section {
+  margin-top: 30px;
+}
+
+.shortcuts-section .shortcut-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-background);
+  padding: 14px 30px;
+  width: 60%;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated:not(.header) * {
+  font-size: 1rem;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated.header {
+  font-weight: bold;
+  font-size: 1rem;
+  background: none;
+  box-shadow: none;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated:hover {
+  background-color: rgba(132, 0, 255, 0.5);
+  cursor: pointer;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated.header:hover {
+  background: none;
+  box-shadow: none;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated .shortcut-description {
+  flex: 1;
+  font-weight: 500;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated .shortcut-keys {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 20px;
+  justify-content: space-between;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated .shortcut-keys .shortcut-mac,
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated .shortcut-keys .shortcut-win {
+  white-space: nowrap;
+}
+
+.shortcuts-section .shortcut-wrapper .shortcut-row-separated .shortcut-keys .vertical-divider {
+  height: 100%;
+  width: 1px;
+  background-color: white;
+  opacity: 0.6;
+}
+
+
