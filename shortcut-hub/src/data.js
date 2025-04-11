@@ -66,3 +66,37 @@ export const categories = [
       ],
     },
   ];
+
+
+  export const shortcuts = {
+    figma: [
+      {
+        mac: 'Cmd + D',
+        windows: 'Ctrl + D',
+        description: 'Duplicate selection'
+      },
+      {
+        mac: 'Cmd + G',
+        windows: 'Ctrl + G',
+        description: 'Group selection'
+      },
+      {
+        mac: 'Cmd + /',
+        windows: 'Ctrl + /',
+        description: 'Search commands'
+      }
+    ],
+    photoshop: [
+      {
+        mac: 'Cmd + Z',
+        windows: 'Ctrl + Z',
+        description: 'Undo'
+      },
+      {
+        mac: 'Cmd + T',
+        windows: 'Ctrl + T',
+        description: 'Free Transform'
+      }
+    ]
+  };
+  

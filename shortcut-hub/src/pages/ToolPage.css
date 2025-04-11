@@ -1,0 +1,85 @@
+.tool-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .tool-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .shortcuts-section {
+    margin-top: 30px;
+  }
+  
+  .shortcut-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+    align-items: center;
+  }
+  
+  .shortcut-row-separated {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-background);
+    padding: 14px 30px;
+    width: 60%;
+  }
+
+.shortcut-row-separated:not(.header) * {
+    font-size: 10%rem;
+}
+  .shortcut-row-separated.header {
+    font-weight: bold;
+    font-size: 1rem;
+    background: none;
+    box-shadow: none;
+  }
+
+.shortcut-row-separated:hover {
+    background-color: rgb(132, 0, 255, .50);
+    cursor: pointer;
+}
+
+
+.shortcut-row-separated header * {
+    font-size: 1.5rem;
+}
+
+.shortcut-row-separated.header:hover {
+    background: none;
+    box-shadow: none;
+  }
+
+  .shortcut-description {
+    flex: 1;
+    font-weight: 500;
+  }
+  
+  .shortcut-keys {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 20px;
+    justify-content: space-between;
+  }
+  
+  .shortcut-mac,
+  .shortcut-win {
+    white-space: nowrap;
+  }
+  
+  .vertical-divider {
+    height: 100%;
+    width: 1px;
+    background-color: white;
+    opacity: 0.6;
+  }
+  
+  
+  
