@@ -5,6 +5,7 @@
   "type": "module",
   "homepage": "https://sandro21.github.io/ShortcutHub",
 
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
