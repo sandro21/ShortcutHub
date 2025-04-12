@@ -72,7 +72,7 @@ function Homepage() {
 
 function App() {
   return (
-    <Router basename="/ShortcutHub">
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/tools/:toolName" element={<ToolPage />} />
