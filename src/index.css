@@ -85,6 +85,11 @@ category {
 .tool-card {
   width: 160px; /* Fixed width for all cards */
   height: 180px; /* Fixed height for all cards */
+
+  @media (max-width: 768px) {
+    width: calc(40% - 16px); /* Adjust width to fit 2 cards per row on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
   background-color: var(--card-background);
   border-radius: 8px;
   padding: 1rem;

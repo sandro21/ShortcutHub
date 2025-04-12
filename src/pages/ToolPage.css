@@ -20,6 +20,10 @@
 }
 
 .tool-header {
+  @media (max-width: 768px) {
+    scale: 0.7;
+    margin-left: 20%;/* Allow height to adjust based on content */
+  }
   display: flex;
   align-items: center;
   gap: 20px;
