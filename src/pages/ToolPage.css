@@ -1,4 +1,5 @@
 
+
 /* Header Section */
 .header1 {
   display: flex;
@@ -51,22 +52,17 @@
 .shortcut-category {
   margin-bottom: 3rem; /* Increased bottom margin for more separation */
   padding-top: 2rem; /* Added padding above each category */
-  border-top: 2px solid rgba(255, 255, 255, 0.2); /* Optional: Add a subtle border to separate categories */
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center-align child elements horizontally */
 }
 
 .category-title {
   font-size: 1.5rem;
   color: var(--text-coor);
   margin: 1rem 0 2rem; /* Increased top margin for more separation */
-  text-align: left; /* Centered the title */
-  padding-left: 20%; /* Added padding to create distance from the left */
-}
-
-@media screen and (max-width: 768px) {
-  .category-title {
-    text-align: center;
-    padding-left: 0%;
-  }
+  padding-right: 36%; /* Remove unnecessary padding */
 }
 
 /* Shortcuts Table */
@@ -81,6 +77,12 @@
   .shortcuts-table {
     width: 100%; /* Increase width for smaller screens */
   }
+  .category-title {
+    padding-right: 0%;
+  }
+  shortcut-cagegory {
+    margin-right: 50px; /* Remove top padding for smaller screens */
+  }
 }
 
 .shortcuts-table th {
@@ -88,6 +90,7 @@
   font-weight: bold;
   padding: 10px; /* Ensure consistent padding */
   border-right: 1px solid white; /* Add white line between columns */
+  text-align: center; /* Center-align all table content */
 }
 
 .shortcuts-table td {
@@ -96,6 +99,7 @@
   padding: 15px; /* Ensure consistent padding */
   transition: background-color 0.3s ease;
   border-right: 1px solid white; /* Add white line between columns */
+  text-align: center; /* Center-align all table content */
 }
 
 .shortcuts-table td:hover {
