@@ -1,26 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { categories } from './data';
 import './index.css';
 import ToolPage from './pages/ToolPage';
 
 function Homepage() {
   return (
-    <div className="zoom"> {/* Add a wrapper for scaling */}
+    <div className="zoom">
       <div className="container">
         <header>
           <img
-            src="/icon.png"
+            src="/ShortcutHub/icon.png"
             alt="Shortcut Hub Logo"
             className="logo"
           />
           <div>
             <h1 style={{ marginBottom: '4px' }}>Shortcut Hub</h1>
-            <p style={{ marginTop: '0' }}>Every shortcut for your favorite tools, centralized and searchable.</p>
+            <p style={{ marginTop: '0' }}>
+              Every shortcut for your favorite tools, centralized and searchable.
+            </p>
           </div>
         </header>
 
-        {/* White line between header and body */}
         <hr className="divider" />
 
         <div className="categories">
@@ -32,24 +33,26 @@ function Homepage() {
                   <Link
                     key={tool.name}
                     to={`/tools/${tool.name.toLowerCase().replace(/ /g, '-')}`}
-                    className="tool-card" // Make the entire card clickable
+                    className="tool-card"
                   >
                     <img
-                      src={`icons/${tool.name.toLowerCase().replace(/ /g, '-')}.png`}
+                      src={`/ShortcutHub/icons/${tool.name.toLowerCase().replace(/ /g, '-')}.png`}
                       alt={tool.name}
                       className="tool-icon"
                       style={{ width: '80px', height: '80px' }}
                     />
-                    <h3 className="tool-name" style={{ fontSize: '18px', marginTop: '9px' }}>{tool.name}</h3>
+                    <h3 className="tool-name" style={{ fontSize: '18px', marginTop: '9px' }}>
+                      {tool.name}
+                    </h3>
                     <div style={{ marginTop: '15px' }} className="platforms">
                       <img
-                        src="/appleicon.png"
+                        src="/ShortcutHub/appleicon.png"
                         alt="Apple"
                         className="platform-icon"
                         style={{ width: '20px', height: '20px' }}
                       />
                       <img
-                        src="/windowsicon.png"
+                        src="/ShortcutHub/windowsicon.png"
                         alt="Windows"
                         className="platform-icon"
                         style={{ width: '18px', height: '18px', marginLeft: '-5px', marginTop: '2px' }}
@@ -63,6 +66,7 @@ function Homepage() {
         </div>
 
         <footer>
+          <p>Made with ❤️ by SK</p>
           <p>© 2025 Shortcut Hub</p>
         </footer>
       </div>
@@ -72,7 +76,7 @@ function Homepage() {
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename="/ShortcutHub">
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/tools/:toolName" element={<ToolPage />} />

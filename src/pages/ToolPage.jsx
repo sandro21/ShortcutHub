@@ -7,17 +7,14 @@ import './ToolPage.css';
 function ToolPage() {
   const { toolName } = useParams();
 
-  // Format the tool name to capitalize the first letter of each word
   const formattedToolName = toolName
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
-  // Get the shortcuts for the current tool
   const toolData = shortcuts[toolName];
   const categories = toolData?.categories || [];
 
-  // Define shortcuts for VS Code
   const vscodeShortcuts = [
     { action: 'Open Command Palette', apple: 'Cmd + Shift + P', windows: 'Ctrl + Shift + P' },
     { action: 'Quick Open', apple: 'Cmd + P', windows: 'Ctrl + P' },
@@ -36,14 +33,17 @@ function ToolPage() {
 
   return (
     <div className="container">
-      {/* Header Section */}
       <div className="header1">
         <Link to="/">
-          <img src="/icon.png" alt="Shortcut Hub Logo" className="logo" />
+          <img
+            src="/ShortcutHub/icon.png"
+            alt="Shortcut Hub Logo"
+            className="logo"
+          />
         </Link>
         <div className="tool-header">
           <img
-            src={`/icons/${toolName.toLowerCase()}.png`}
+            src={`/ShortcutHub/icons/${toolName.toLowerCase()}.png`}
             alt={formattedToolName}
             className="tool-logo"
           />
@@ -51,9 +51,6 @@ function ToolPage() {
         </div>
       </div>
 
-
-
-      {/* Shortcuts Section */}
       <div className="shortcuts-section">
         {categories.length === 0 ? (
           <p>No shortcuts available for this tool yet.</p>
@@ -62,7 +59,7 @@ function ToolPage() {
             <div key={index} className="shortcut-category">
               <h2 className="category-title">{category.name}</h2>
               <table className="shortcuts-table">
-                {index === 0 && ( // Render the header only for the first table
+                {index === 0 && (
                   <thead>
                     <tr>
                       <th className="shortcut-header">Action</th>
@@ -86,7 +83,6 @@ function ToolPage() {
         )}
       </div>
 
-      {/* Shortcuts Table */}
       {toolName.toLowerCase() === 'vs-code' && (
         <div className="shortcuts">
           <h2>Shortcuts</h2>
