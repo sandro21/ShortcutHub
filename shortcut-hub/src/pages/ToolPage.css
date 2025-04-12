@@ -1,88 +1,118 @@
-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align items to the left */
-    gap: 20px; /* Add spacing between items */
-    padding: 2rem;
-  }
-  
-  header * {
-    cursor: pointer; /* Change cursor to hand on hover for all header elements */
-  }
-  
-  header *:hover {
-    filter: drop-shadow(2px 0 4px var(--primary-color));
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  
-  .logo {
-    width: 90px;
-    height: 90px;
-    padding-top: 15px; /* Adjust padding to center the logo vertically */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .logo:hover {
-    transform: scale(1.1) rotate(10deg); /* Slight size increase and rotation */
-    filter: drop-shadow(0 0 15px var(--primary-color)); /* Natural glow effect */
-  }
 
-  .divider {
-    border: none;
-    border-top: 2px solid white; /* White line */
-    margin: 1rem 0; /* Add spacing above and below the line */
-    opacity: 0.5; /* Slight transparency */
-  }
+/* Header Section */
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
 
-  .tool-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .tool-header img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .tool-header h1 {
-    font-size: 2rem;
-    color: var(--text-color);
-  }
+.header1 * :hover {
+  cursor: pointer; /* Change cursor to hand on hover for all header elements */
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
 
-  .shortcuts {
-    margin-top: 20px;
-  }
-  
-  .shortcuts h2 {
-    text-align: center;
-    color: var(--text-color);
-    margin-bottom: 10px;
-  }
-  
-  .shortcuts table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-  }
-  
-  .shortcuts th, .shortcuts td {
-    border: 1px solid #444;
-    padding: 10px;
-    text-align: left;
-    color: var(--text-color);
-  }
-  
-  .shortcuts th {
-    background-color: var(--primary-color);
-    color: #fff;
-  }
-  
-  .shortcuts tr:nth-child(even) {
-    background-color: #2a2a2a;
-  }
-  
-  .shortcuts tr:hover {
-    background-color: #444;
-  }
+.header1 .logo {
+  width: 90px;
+  height: 90px;
+  padding:0;
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tool-header .tool-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.tool-header h1 {
+  font-size: 2rem;
+  color: white;
+}
+
+.tool-header * {
+  text-align: left;
+}
+
+/* Shortcuts Section */
+.shortcuts-section {
+  margin-top: 20px;
+}
+
+.shortcut-category {
+  margin-bottom: 3rem; /* Increased bottom margin for more separation */
+  padding-top: 2rem; /* Added padding above each category */
+  border-top: 2px solid rgba(255, 255, 255, 0.2); /* Optional: Add a subtle border to separate categories */
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: var(--text-coor);
+  margin: 1rem 0 2rem; /* Increased top margin for more separation */
+  text-align: left; /* Centered the title */
+  padding-left: 20%; /* Added padding to create distance from the left */
+}
+
+/* Shortcuts Table */
+.shortcuts-table {
+  width: 60%; /* Consistent width for all tables */
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the table horizontally */
+  text-align: center; /* Center-align the text inside the table */
+}
+
+.shortcuts-table th {
+  color: #fff;
+  font-weight: bold;
+  padding: 10px; /* Ensure consistent padding */
+  border-right: 1px solid white; /* Add white line between columns */
+}
+
+.shortcuts-table td {
+  background-color: rgba(0, 0, 0, 0); /* Purple background */
+  color: #fff;
+  padding: 15px; /* Ensure consistent padding */
+  transition: background-color 0.3s ease;
+  border-right: 1px solid white; /* Add white line between columns */
+}
+
+.shortcuts-table td:hover {
+  background-color: rgb(55, 0, 149); /* Darker purple on hover */
+}
+
+.shortcuts-table tr:hover td {
+  background-color: rgb(106, 0, 226); /* Darker purple on hover */
+}
+
+.shortcuts-table .shortcut-description {
+  text-align: center;
+  width: 40%;
+  padding-left: 15px;
+}
+
+.shortcuts-table .shortcut-key {
+  text-align: left;
+  width: 25%;
+}
+
+/* Remove the border from the last column */
+.shortcuts-table th:last-child,
+.shortcuts-table td:last-child {
+  border-right: none;
+}
+
+/* Fix alignment for the first table */
+.shortcuts-table:first-of-type thead th {
+  padding: 10px; /* Ensure consistent padding for the first table header */
+  text-align: center; /* Center-align the header text */
+}
+
+.shortcuts-table:first-of-type {
+  margin: 0 auto; /* Ensure the first table is also centered */
+  text-align: center; /* Center-align the text inside the first table */
+}
