@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { useParams, Link } from 'react-router-dom';
 import { shortcuts } from '../data';
 import './ToolPage.css';
 
@@ -13,18 +13,15 @@ function ToolPage() {
     .join(' ');
 
   // Get the shortcuts for the current tool
-  const toolShortcuts = shortcuts[toolName] || [];
+  const toolData = shortcuts[toolName];
+  const categories = toolData?.categories || [];
 
   return (
     <div className="container">
       {/* Header Section */}
       <div className="header1">
-        <Link to="/"> {/* Navigate to the homepage */}
-          <img
-            src="/icon.png"
-            alt="Shortcut Hub Logo"
-            className="logo"
-          />
+        <Link to="/">
+          <img src="/icon.png" alt="Shortcut Hub Logo" className="logo" />
         </Link>
         <div className="tool-header">
           <img
@@ -36,37 +33,38 @@ function ToolPage() {
         </div>
       </div>
 
-      {/* Divider */}
-      <hr className="divider" />
+
 
       {/* Shortcuts Section */}
       <div className="shortcuts-section">
-        {toolShortcuts.length === 0 ? (
+        {categories.length === 0 ? (
           <p>No shortcuts available for this tool yet.</p>
         ) : (
-          <div className="shortcut-wrapper">
-            {/* Header Row */}
-            <div className="shortcut-row-separated header">
-              <div className="shortcut-description">Name</div>
-              <div className="shortcut-keys">
-                <div className="shortcut-mac">Mac</div>
-                <div className="vertical-divider" />
-                <div className="shortcut-win">Windows</div>
-              </div>
+          categories.map((category, index) => (
+            <div key={index} className="shortcut-category">
+              <h2 className="category-title">{category.name}</h2>
+              <table className="shortcuts-table">
+                {index === 0 && ( // Render the header only for the first table
+                  <thead>
+                    <tr>
+                      <th className="shortcut-header">Action</th>
+                      <th className="shortcut-header">Mac</th>
+                      <th className="shortcut-header">Windows</th>
+                    </tr>
+                  </thead>
+                )}
+                <tbody>
+                  {category.shortcuts.map((shortcut, idx) => (
+                    <tr key={idx} className="shortcut-row">
+                      <td className="shortcut-description">{shortcut.description}</td>
+                      <td className="shortcut-mac">{shortcut.mac}</td>
+                      <td className="shortcut-win">{shortcut.windows}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-
-            {/* Shortcut Rows */}
-            {toolShortcuts.map((shortcut, index) => (
-              <div className="shortcut-row-separated" key={index}>
-                <div className="shortcut-description">{shortcut.description}</div>
-                <div className="shortcut-keys">
-                  <div className="shortcut-mac">{shortcut.mac}</div>
-                  <div className="vertical-divider" />
-                  <div className="shortcut-win">{shortcut.windows}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          ))
         )}
       </div>
     </div>
