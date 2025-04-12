@@ -72,7 +72,8 @@ function Homepage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/shortcut-hub">
+
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/tools/:toolName" element={<ToolPage />} />
