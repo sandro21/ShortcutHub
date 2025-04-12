@@ -72,7 +72,7 @@ function Homepage() {
 
 function App() {
   return (
-    <Router basename="/shortcut-hub">
+    <Router basename="/ShortcutHub">
 
       <Routes>
         <Route path="/" element={<Homepage />} />
