@@ -1,3 +1,4 @@
+
 /* Header Section */
 .header1 {
   display: flex;
@@ -115,5 +116,3 @@
   margin: 0 auto; /* Ensure the first table is also centered */
   text-align: center; /* Center-align the text inside the first table */
 }
-
-
