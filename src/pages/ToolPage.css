@@ -62,7 +62,10 @@
   font-size: 1.5rem;
   color: var(--text-coor);
   margin: 1rem 0 2rem; /* Increased top margin for more separation */
-  padding-right: 36%; /* Remove unnecessary padding */
+  padding-right: 60%;
+  text-decoration: underline;
+  font-style: italic; /* Underline the text */
+  text-decoration-color: var(--primary-color); /* Make the underline purple */
 }
 
 /* Shortcuts Table */
@@ -86,11 +89,14 @@
 }
 
 .shortcuts-table th {
-  color: #fff;
+  color: white; /* Lighter color for better contrast */
+  background-color: var(--primary-color);
   font-weight: bold;
+  font-size: 120%;
   padding: 10px; /* Ensure consistent padding */
   border-right: 1px solid white; /* Add white line between columns */
   text-align: center; /* Center-align all table content */
+  box-shadow: 0px 4px 1px rgb(255, 255, 255); /* Add shadow to indicate it's a header */
 }
 
 .shortcuts-table td {
@@ -103,17 +109,18 @@
 }
 
 .shortcuts-table td:hover {
-  background-color: rgb(55, 0, 149); /* Darker purple on hover */
+  background-color: rgb(93, 0, 255); /* Darker purple on hover */
 }
 
 .shortcuts-table tr:hover td {
-  background-color: rgb(106, 0, 226); /* Darker purple on hover */
+  background-color: var(--primary-color); /* Darker purple on hover */
 }
 
 .shortcuts-table .shortcut-description {
-  text-align: center;
+  text-align: left;
   width: 40%;
   padding-left: 15px;
+  font-weight: bold;
 }
 
 .shortcuts-table .shortcut-key {
