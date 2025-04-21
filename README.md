@@ -1,64 +1,99 @@
 # 🔗 Shortcut Hub
 
-**Your central place for software keyboard shortcuts across design, development, productivity, and OS tools.**
+A clean and interactive website that organizes keyboard shortcuts from the most popular design, development, productivity, and operating system tools — all in one place.
 
-## 🌟 Overview
+---
 
-Shortcut Hub is a beautifully designed web app that aggregates keyboard shortcuts for popular software tools. Whether you're a designer using Figma, a developer working in VS Code, or a productivity geek living in Notion — this app helps you find all the shortcuts you need in one place.
+---
 
-## 🖼️ Preview
+## ✨ Features
 
-![Shortcut Hub Screenshot](public/screenshot.png)  
-*(Add your own screenshot if needed)*
+- 🎯 Organized by categories like Design, Development, Productivity, OS, and 3D
+- 🧭 Easy navigation with React Router
+- 🧑‍💻 Dynamic routing to each tool's page
+- 🎨 Stylish dark theme with hover animations
+- 📱 Responsive layout
+- 🍎 Windows and macOS icons for cross-platform clarity
 
-## 🚀 Features
+---
 
-- 🌐 Categorized by Design, Development, Productivity, OS, and 3D Tools
-- 🎨 Fully responsive and styled with a modern, dark-themed UI
-- ⚡ Hover animations, clickable tool cards, platform badges
-- 🔍 Dynamically generated tool pages
-- 🧭 Easy-to-use routing with React Router
+## 🧱 Project Structure
 
-## 📁 Folder Structure
+```
+/public
+  └── /icons                → App icons (e.g. figma.png, vscode.png)
+  └── icon.png              → Main site logo
 
-📦 shortcut-hub/ ├── public/ │ └── icons/ # All tool icons (e.g., figma.png, vscode.png) ├── src/ │ ├── App.jsx # Main app routing and homepage │ ├── data.js # Shortcut tool categories and links │ ├── index.css # Tailored styling with dark theme │ ├── pages/ │ │ └── ToolPage.jsx # Dynamic page for each tool │ ├── components/ │ │ ├── Category.jsx # Renders a category of tools │ │ └── ToolLink.jsx # (Optional, for tool link structure) └── README.md # You're reading it!
+/src
+  ├── App.jsx               → Main app with routes and homepage
+  ├── data.js               → Static data for tool categories and links
+  ├── index.css             → Custom styling (dark theme, animations)
+  ├── /pages
+  │   └── ToolPage.jsx      → Tool-specific display page
+  ├── /components
+  │   ├── Category.jsx      → Renders each tool category
+  │   └── ToolLink.jsx      → (Optional) Individual tool link component
 
-markdown
-Copy code
+README.md                   → You’re here!
+```
 
-## 🛠️ Built With
+---
 
-- ⚛️ React
-- 🎨 CSS with custom variables and animations
-- 🗂️ React Router
-- 🧪 Vite (Recommended for fast dev environment)
+## 🛠 Tech Stack
 
-## 🧑‍💻 Getting Started
+- **React**
+- **React Router**
+- **CSS (Custom)**
+- **Vite (optional for faster dev build)**
 
-### 1. Clone the repo
-```bash
-git clone https://github.com/yourusername/shortcut-hub.git
-cd shortcut-hub
-2. Install dependencies
-bash
-Copy code
-npm install
-3. Run locally
-bash
-Copy code
-npm run dev
-4. Build for production
-bash
-Copy code
-npm run build
-🧩 Future Plans
- Add actual shortcut content to tool pages
+---
 
- Add search functionality
+## 🚀 Getting Started
 
- Mobile optimizations
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/shortcut-hub.git
+   cd shortcut-hub
+   ```
 
- Deploy to GitHub Pages / Vercel
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-📄 License
-MIT License. Feel free to fork and improve!
+3. **Run locally**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📌 Available Categories & Tools
+
+### 🎨 Design
+Figma, Sketch, Adobe XD, Illustrator, Photoshop, InDesign, Lightroom, After Effects, Affinity Photo, Framer, InVision, Miro, Overflow.io, Principle
+
+### 🧑‍💻 Development
+VS Code, Sublime Text, Atom, Xcode, Android Studio, GitHub Desktop, IntelliJ IDEA, Postman, Docker
+
+### ✅ Productivity
+Notion, Trello, Slack, Google Docs, Google Sheets, Apple Calendar, Chrome, Gmail, Google Calendar, Google Meet, Microsoft Teams, Safari, Zoom
+
+### 🖥️ Operating Systems
+macOS, Windows, Ubuntu
+
+### 🧊 3D
+Blender, Cinema 4D
+
+---
+
+## 📍 Future Plans
+
+- [ ] Add actual shortcut listings to each tool
+- [ ] Search bar for quick access
+- [ ] Light/Dark toggle
