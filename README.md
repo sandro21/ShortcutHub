@@ -1,9 +1,6 @@
 # 🔗 Shortcut Hub
 
 A clean and interactive website that organizes keyboard shortcuts from the most popular design, development, productivity, and operating system tools — all in one place.
-
----
-
 ---
 
 ## ✨ Features
@@ -85,7 +82,7 @@ VS Code, Sublime Text, Atom, Xcode, Android Studio, GitHub Desktop, IntelliJ IDE
 Notion, Trello, Slack, Google Docs, Google Sheets, Apple Calendar, Chrome, Gmail, Google Calendar, Google Meet, Microsoft Teams, Safari, Zoom
 
 ### 🖥️ Operating Systems
-macOS, Windows, Ubuntu
+macOS, Windows, Ubuntu,
 
 ### 🧊 3D
 Blender, Cinema 4D
@@ -93,7 +90,5 @@ Blender, Cinema 4D
 ---
 
 ## 📍 Future Plans
-
-- [ ] Add actual shortcut listings to each tool
 - [ ] Search bar for quick access
 - [ ] Light/Dark toggle
