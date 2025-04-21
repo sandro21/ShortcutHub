@@ -2,8 +2,6 @@
 
 **Your central place for software keyboard shortcuts across design, development, productivity, and OS tools.**
 
-![Logo](public/icon.png)
-
 ## 🌟 Overview
 
 Shortcut Hub is a beautifully designed web app that aggregates keyboard shortcuts for popular software tools. Whether you're a designer using Figma, a developer working in VS Code, or a productivity geek living in Notion — this app helps you find all the shortcuts you need in one place.
