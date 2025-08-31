@@ -10,20 +10,17 @@ function Homepage() {
       <div className="container">
         <header>
           <img
-            src="/ShortcutHub/icon.png"
+            src="/ShortcutHub/icon4.png"
             alt="Shortcut Hub Logo"
             className="logo"
           />
           <div>
-            <h1 style={{ marginBottom: '4px' }}>Shortcut Hub</h1>
-            <p style={{ marginTop: '0' }}>
-              Every shortcut for your favorite tools, centralized and searchable.
+            <h1>Shortcut Hub</h1>
+            <p>
+            Easily accessible library for all the shortcuts
             </p>
           </div>
         </header>
-
-        <hr className="divider" />
-
         <div className="categories">
           {categories.map((category) => (
             <section key={category.name} className="category">
