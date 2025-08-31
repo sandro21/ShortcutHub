@@ -19,12 +19,16 @@ header {
   justify-content: flex-start; /* Align items to the left */
   gap: 18px; /* Increased spacing between items */
   padding: 0 0.5rem; /* Increased horizontal padding */
-  background: linear-gradient(135deg, #4F22B0 0%, #6B46C1 100%); /* Subtle gradient */
   border-radius: 35px; /* Increased border radius */
-  box-shadow: 0 0 60px -4px #4F22B0, 0 30px 80px -20px #4F22B0; /* Combined shadow effects */
+  box-shadow: 0 0 60px -4px #4f16c8, 0 40px 80px -30px #5924cca1; /* Combined shadow effects */
   width: 450px; /* Increased width */
   height: 85px; /* Increased height */
   margin: 2.3rem auto 0.5rem auto; /* Center the header horizontally and add top margin */
+  border: 2px solid transparent;
+  background: linear-gradient(190deg, #3b2463 0%, #1d0a4b 70%, #140142 100%) padding-box, 
+              linear-gradient(45deg, #ffffff, #ff6b9d, #8544f4, #00d4ff, #ffffff, #ff6b9d, #8544f4) border-box;
+  background-size: 300% 300%;
+  animation: borderRotate 4s linear infinite;
 }
 
 header * {
@@ -75,7 +79,7 @@ category {
 }
 
 .category h2 {
-  margin: 3rem 0 1rem 0;
+  margin: 3.4rem 0 0.6rem 0;
   font-size: 1.rem;
   color: white;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -109,19 +113,16 @@ category {
 .tool-grid {
   display: flex; /* Use Flexbox for consistent sizing */
   flex-wrap: wrap; /* Allow wrapping to the next row */
-  justify-content: left; /* Center the cards */
+  justify-content: center; /* Center the cards */
   gap: 20px; /* Increased space between cards */
   padding: 1rem;
+  max-width: 1060px; /* Exact width for 6 cards: 6×160px + 5×20px gaps + 2×16px padding = 1060px */
+  margin: 0 auto; /* Center the grid container */
 }
 
 .tool-card {
   width: 160px; /* Fixed width for all cards */
   height: 180px; /* Fixed height for all cards */
-
-  @media (max-width: 768px) {
-    width: calc(40% - 16px); /* Adjust width to fit 2 cards per row on smaller screens */
-    height: auto; /* Allow height to adjust based on content */
-  }
   background: linear-gradient(180deg, var(--card-background) 0%, #1f0f4a 100%); /* Very subtle vertical gradient */
   border-radius: 20px;
   padding: 1rem;
@@ -132,6 +133,7 @@ category {
   cursor: pointer;
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit text color from parent */
+  flex-shrink: 0; /* Prevent cards from shrinking */
 }
 .tool-card:hover {
   background: linear-gradient(180deg, rgb(79, 34, 176) 0%, #6b46c1 100%); /* Subtle vertical gradient on hover */
@@ -190,6 +192,25 @@ category {
   border-top: 2px solid white; /* White line */
   margin: 1rem 0; /* Add spacing above and below the line */
   opacity: 0.5; /* Slight transparency */
+}
+
+/* Animated gradient border keyframes */
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 
