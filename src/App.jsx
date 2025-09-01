@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { categories } from './data';
 import './index.css';
 import ToolPage from './pages/ToolPage';
 
 function Homepage() {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = headerRef.current;
+      if (header) {
+        const scrollY = window.scrollY;
+        if (scrollY > 100) {
+          header.classList.add('sticky');
+        } else {
+          header.classList.remove('sticky');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="zoom">
       <div className="container">
-        <header>
+        <header ref={headerRef}>
           <img
             src="/ShortcutHub/icon4.png"
             alt="Shortcut Hub Logo"

@@ -29,6 +29,45 @@ header {
               linear-gradient(45deg, #ffffff, #ff6b9d, #8544f4, #00d4ff, #ffffff, #ff6b9d, #8544f4) border-box;
   background-size: 300% 300%;
   animation: borderRotate 4s linear infinite;
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+}
+
+/* Sticky header state - smaller and more compact */
+header.sticky {
+  width: 300px;
+  height: 60px;
+  margin: 0.5rem auto;
+  border-radius: 25px;
+  padding: 0 0.3rem;
+  gap: 12px;
+  box-shadow: 0 0 40px -4px #4f16c8, 0 20px 40px -20px #5924cca1;
+}
+
+/* Hide subtitle when sticky */
+header.sticky p {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Show subtitle when not sticky */
+header p {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+header.sticky h1 {
+  font-size: 1.8rem;
+  padding-top: 2rem;
+}
+
+header.sticky img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
 }
 
 /* Mobile responsive header */
@@ -41,6 +80,14 @@ header {
     padding: 0 0.3rem;
     margin: 1.5rem auto 0.5rem auto;
   }
+  
+  header.sticky {
+    width: 250px;
+    height: 50px;
+    margin: 0.3rem auto;
+    gap: 8px;
+    padding: 0 0.2rem;
+  }
 }
 
 @media (max-width: 300px) {
@@ -51,6 +98,15 @@ header {
     gap: 8px;
     padding: 0 0.2rem;
     margin: 1rem auto 0.5rem auto;
+  }
+  
+  header.sticky {
+    width: 200px;
+    height: 45px;
+    margin: 0.2rem auto;
+    gap: 6px;
+    padding: 0 0.15rem;
+    
   }
 }
 
@@ -90,6 +146,10 @@ header p {
   header p {
     font-size: 14px;
   }
+  
+  header.sticky h1 {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 300px) {
@@ -99,6 +159,10 @@ header p {
   
   header p {
     font-size: 12px;
+  }
+  
+  header.sticky h1 {
+    font-size: 18px;
   }
 }
 
@@ -117,6 +181,12 @@ header p {
     height: 50px;
     padding: .2rem 0 0 0.5rem;
   }
+  
+  header.sticky .logo {
+    width: 35px;
+    height: 35px;
+    padding: .1rem 0 0 0.3rem;
+  }
 }
 
 @media (max-width: 300px) {
@@ -124,6 +194,12 @@ header p {
     width: 40px;
     height: 40px;
     padding: .15rem 0 0 0.3rem;
+  }
+  
+  header.sticky .logo {
+    width: 30px;
+    height: 30px;
+    padding: .05rem 0 0 0.2rem;
   }
 }
 

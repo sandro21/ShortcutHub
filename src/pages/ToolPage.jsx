@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { shortcuts } from '../data';
 
@@ -7,6 +7,7 @@ import './ToolPage.css';
 function ToolPage() {
   const { toolName } = useParams();
   const [selectedPlatform, setSelectedPlatform] = useState('windows'); // Default to Windows
+  const headerSectionRef = useRef(null);
 
   const formattedToolName = toolName
     .split('-')
@@ -20,10 +21,42 @@ function ToolPage() {
     setSelectedPlatform(platform);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const headerSection = headerSectionRef.current;
+      const contentSection = document.querySelector('.content-section');
+      
+      if (headerSection && contentSection) {
+        const headerRect = headerSection.getBoundingClientRect();
+        const contentRect = contentSection.getBoundingClientRect();
+        const scrollY = window.scrollY;
+        
+        // Header becomes sticky when scrolled past its original position
+        if (scrollY > 100) {
+          headerSection.classList.add('sticky');
+          
+          // Check if content section has reached the top of viewport
+          if (contentRect.top <= 0) {
+            // Content is pushing the header up, so remove sticky
+            headerSection.classList.add('pushed-up');
+          } else {
+            headerSection.classList.remove('pushed-up');
+          }
+        } else {
+          headerSection.classList.remove('sticky');
+          headerSection.classList.remove('pushed-up');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="tool-page">
       {/* Header with gradient background */}
-      <div className="app-header-section">
+      <div className="app-header-section" ref={headerSectionRef}>
         <div className="app-header">
           {/* Back button and logo container */}
           <Link to="/" className="back-container">
@@ -34,16 +67,6 @@ function ToolPage() {
               className="back-logo"
             />
           </Link>
-          
-          {/* App info container */}
-          <div className="app-info-container">
-            <img
-              src={`/ShortcutHub/icons/${toolName.toLowerCase()}.png`}
-              alt={formattedToolName}
-              className="app-icon"
-            />
-            <h1 className="app-name">{formattedToolName}</h1>
-          </div>
 
           {/* Platform switcher */}
           <div className="platform-switcher">
@@ -65,6 +88,16 @@ function ToolPage() {
             <div className={`gradient-selector ${selectedPlatform}`}></div>
           </div>
         </div>
+      </div>
+      
+      {/* App info container - moved out of header */}
+      <div className="app-info-container">
+        <img
+          src={`/ShortcutHub/icons/${toolName.toLowerCase()}.png`}
+          alt={formattedToolName}
+          className="app-icon"
+        />
+        <h1 className="app-name">{formattedToolName}</h1>
       </div>
 
       {/* Content area with dark background */}
