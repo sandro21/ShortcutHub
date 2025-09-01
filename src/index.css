@@ -212,7 +212,7 @@ footer {
 
 .made-with-love {
   margin-top: -2rem;
-  height: 7rem;
+  height: 6rem;
   width: auto;
 }
 
@@ -330,7 +330,7 @@ category {
   padding: 1rem;
   text-align: center;
   border: 1.5px solid #8147ff; /* Shiny white outline */
-  transition: all 0.6s ease-in-out;
+  transition: all 0.35s ease-in-out;
   box-shadow: 0 0 20px -2px rgba(79, 34, 176, 0.3), 0 4px 15px rgba(0, 0, 0, 0.4); /* Purple glow + dark shadow to match header */
   cursor: pointer;
   text-decoration: none; /* Remove underline */
@@ -370,8 +370,8 @@ category {
 
 .tool-card:hover {
   background: linear-gradient(180deg, #2d1b69 0%, #3d1f7a 100%); /* More subtle gradient change */
-  transform: translateY(-5px); /* Gentle lift instead of dramatic 3D effect */
-  box-shadow: 0 0 25px -2px rgba(79, 34, 176, 0.4), 0 6px 20px rgba(0, 0, 0, 0.5); /* Subtle glow increase */
+  transform: translateY(-6px) scale(1.04); /* Increased lift and added scale for more dramatic motion */
+  box-shadow: 0 0 35px -2px rgba(79, 34, 176, 0.6), 0 12px 30px rgba(0, 0, 0, 0.6); /* Enhanced glow and shadow */
 }
 
 .tool-card:active {
@@ -380,16 +380,17 @@ category {
 }
 
 .tool-card:hover .tool-icon {
-  filter: drop-shadow(0 0 8px white);
-  transition: filter 0.3s ease;
-  transform: scale(1.08); /* Slightly increase size on hover */
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 5px white);
+  transition: filter 0.4s ease;
+  transform: scale(1.1); /* Increased scale for more dramatic motion */
+  transition: transform 0.4s ease;
 }
 
 .tool-card:hover .platform {
-  filter: drop-shadow(0 0 10px rgb(54, 54, 54));
-  transition: filter 0.3s ease; /* Slightly increase size on hover */
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 8px rgb(54, 54, 54));
+  transition: filter 2s ease;
+  transform: scale(1.1); /* Added scale for more dramatic motion */
+  transition: transform 0.1s ease;
 }
 
 
