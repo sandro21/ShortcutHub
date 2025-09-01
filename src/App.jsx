@@ -17,7 +17,7 @@ function Homepage() {
           <div>
             <h1>Shortcut Hub</h1>
             <p>
-            Easily accessible library for all the shortcuts
+            Easily access shortcuts for your favorite tools
             </p>
           </div>
         </header>
@@ -36,23 +36,20 @@ function Homepage() {
                       src={`/ShortcutHub/icons/${tool.name.toLowerCase().replace(/ /g, '-')}.png`}
                       alt={tool.name}
                       className="tool-icon"
-                      style={{ width: '80px', height: '80px' }}
                     />
-                    <h3 className="tool-name" style={{ fontSize: '18px', marginTop: '9px' }}>
+                    <h3 className="tool-name">
                       {tool.name}
                     </h3>
-                    <div style={{ marginTop: '15px' }} className="platforms">
+                    <div className="platforms">
                       <img
                         src="/ShortcutHub/appleicon.png"
                         alt="Apple"
                         className="platform-icon"
-                        style={{ width: '20px', height: '20px' }}
                       />
                       <img
                         src="/ShortcutHub/windowsicon.png"
                         alt="Windows"
-                        className="platform-icon"
-                        style={{ width: '18px', height: '18px', marginLeft: '-5px', marginTop: '2px' }}
+                        className="platform-icon platform-icon-windows"
                       />
                     </div>
                   </Link>

@@ -335,13 +335,13 @@
 /* Moving gradient selector */
 .gradient-selector {
   position: absolute;
-  top: .45rem;
-  left: 0.53rem;
-  width: 2.4rem;
-  height: 2.4rem;
+  top: .4rem;
+  left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
   background: linear-gradient(180deg, #792CFF 0%, #231A99 100%);
   border-radius: 8px;
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   z-index: 1;
   box-shadow: 0 0 15px rgba(79, 34, 176, 0.6);
 }
@@ -351,7 +351,7 @@
 }
 
 .gradient-selector.apple {
-  transform: translateX(2.5rem);
+  transform: translateX(2.1rem);
 }
 
 /* Responsive adjustments */
