@@ -210,6 +210,12 @@ footer {
   padding: 2rem;
 }
 
+.made-with-love {
+  margin-top: -2rem;
+  height: 7rem;
+  width: auto;
+}
+
 category {
   margin: 2rem auto;
   width: 90%;
@@ -286,7 +292,7 @@ category {
   gap: 20px; /* Increased space between cards */
   padding: 1rem;
   max-width: 1060px; /* Exact width for 6 cards: 6×160px + 5×20px gaps + 2×16px padding = 1060px */
-  margin: 0 auto; /* Center the grid container */
+  margin: 0 auto 5rem; /* Center the grid container */
 }
 
 /* Mobile responsive tool grid - use CSS Grid for better control */

@@ -79,8 +79,7 @@ function Homepage() {
         </div>
 
         <footer>
-          <p>Made with ❤️ by SK</p>
-          <p>© 2025 Shortcut Hub</p>
+          <img src="/ShortcutHub/madewithlove.png" alt="Made with love by SK" className="made-with-love" />
         </footer>
       </div>
     </div>

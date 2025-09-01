@@ -135,6 +135,11 @@ function ToolPage() {
           )}
         </div>
       </div>
+      
+      {/* Footer with Made with Love */}
+      <footer>
+        <img src="/ShortcutHub/madewithlove.png" alt="Made with love by SK" className="made-with-love" />
+      </footer>
     </div>
   );
 }
