@@ -76,26 +76,27 @@ function ToolPage() {
             categories.map((category, index) => (
               <div key={index} className="shortcut-category">
                 <h2 className="category-title">{category.name}</h2>
-                <table className="shortcuts-table">
-                  {index === 0 && (
-                    <thead>
-                      <tr>
-                        <th className="shortcut-header">Action</th>
-                        <th className="shortcut-header">Mac</th>
-                        <th className="shortcut-header">Windows</th>
-                      </tr>
-                    </thead>
-                  )}
-                  <tbody>
-                    {category.shortcuts.map((shortcut, idx) => (
-                      <tr key={idx} className="shortcut-row">
-                        <td className="shortcut-description">{shortcut.description}</td>
-                        <td className="shortcut-mac">{shortcut.mac}</td>
-                        <td className="shortcut-win">{shortcut.windows}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <div className="shortcuts-container">
+                  <div className="shortcuts-header">
+                    <div className="header-action">Action</div>
+                    <div className="header-shortcut">Shortcut</div>
+                  </div>
+                  <div className="shortcuts-list">
+                    {category.shortcuts.map((shortcut, idx) => {
+                      const shortcutText = selectedPlatform === 'windows' ? shortcut.windows : shortcut.mac;
+                      const formattedShortcut = shortcutText.replace(/CMD/gi, '⌘');
+                      
+                      return (
+                        <div key={idx} className="shortcut-item">
+                          <div className="action-text">{shortcut.description}</div>
+                          <div className="shortcut-container">
+                            {formattedShortcut}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             ))
           )}

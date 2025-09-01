@@ -122,13 +122,13 @@ category {
 
 .tool-card {
   width: 160px; /* Fixed width for all cards */
-  height: 180px; /* Fixed height for all cards */
+  height: 180px; /* Fixed width for all cards */
   background: linear-gradient(180deg, var(--card-background) 0%, #1f0f4a 100%); /* Very subtle vertical gradient */
   border-radius: 20px;
   padding: 1rem;
   text-align: center;
   border: 1.5px solid #8147ff; /* Shiny white outline */
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.6s ease-in-out;
   box-shadow: 0 0 20px -2px rgba(79, 34, 176, 0.3), 0 4px 15px rgba(0, 0, 0, 0.4); /* Purple glow + dark shadow to match header */
   cursor: pointer;
   text-decoration: none; /* Remove underline */
