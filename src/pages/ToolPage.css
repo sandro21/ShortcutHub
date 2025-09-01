@@ -105,6 +105,7 @@
   z-index: 100;
 }
 
+
 .app-info-container:hover {
   background: linear-gradient(190deg, #110026 0%, #2d0173 100%) padding-box, 
               linear-gradient(45deg, #ffffff, #ff6b9d, #8544f4, #00d4ff, #ffffff, #ff6b9d, #8544f4) border-box;
@@ -115,9 +116,10 @@
 }
 
 .app-info-container:active {
-  transform: translateY(2px);
-  box-shadow: 0 0 15px rgba(79, 34, 176, 0.3);
+  transform: translateX(-50%) translateY(2px); /* Maintain the same transform as the base state */
 }
+
+
 
 .app-icon {
   width: 50px;
