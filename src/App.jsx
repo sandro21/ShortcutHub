@@ -8,19 +8,41 @@ function Homepage() {
   const headerRef = useRef(null);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const header = headerRef.current;
-      if (header) {
-        const scrollY = window.scrollY;
-        if (scrollY > 100) {
-          header.classList.add('sticky');
-        } else {
-          header.classList.remove('sticky');
-        }
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const header = headerRef.current;
+          if (header) {
+            const scrollY = window.scrollY;
+            const shouldHideSubtitle = scrollY > 50; // Hide subtitle earlier
+            const shouldBeSticky = scrollY > 100; // Keep container resize at same point
+            
+            const isCurrentlyHidden = header.classList.contains('hide-subtitle');
+            const isCurrentlySticky = header.classList.contains('sticky');
+            
+            // Handle subtitle hiding first
+            if (shouldHideSubtitle && !isCurrentlyHidden) {
+              header.classList.add('hide-subtitle');
+            } else if (!shouldHideSubtitle && isCurrentlyHidden) {
+              header.classList.remove('hide-subtitle');
+            }
+            
+            // Handle container resizing later
+            if (shouldBeSticky && !isCurrentlySticky) {
+              header.classList.add('sticky');
+            } else if (!shouldBeSticky && isCurrentlySticky) {
+              header.classList.remove('sticky');
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

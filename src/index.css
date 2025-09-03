@@ -32,6 +32,16 @@ header {
   position: sticky;
   top: 1rem;
   z-index: 100;
+  /* Add smooth transitions with delay for container properties */
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              height 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              margin 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              gap 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  /* Optimize for animations */
+  will-change: width, height, margin, border-radius, padding, gap, box-shadow;
 }
 
 /* Sticky header state - smaller and more compact */
@@ -45,20 +55,19 @@ header.sticky {
   box-shadow: 0 0 40px -4px #4f16c8, 0 20px 40px -20px #5924cca1;
 }
 
-/* Hide subtitle when sticky */
-header.sticky p {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-}
-
-/* Show subtitle when not sticky */
+/* Show subtitle when not hidden */
 header p {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.3s ease;
 }
 
+/* Hide subtitle when scrolling starts (earlier trigger) */
+header.hide-subtitle p {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Container resizing happens later */
 header.sticky h1 {
   font-size: 1.8rem;
   padding-top: 2rem;
@@ -123,6 +132,10 @@ header h1 {
   font-weight: 800;
   line-height: normal;
   margin: 0 0 2px 0;
+  transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  /* Optimize for animations */
+  will-change: font-size, padding-top;
 }
 
 /* Subtitle styling */
@@ -135,6 +148,10 @@ header p {
   line-height: normal;
   margin: 0;
   margin-top: -5px; /* Reduce vertical gap between title and subtitle */
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Optimize for animations */
+  will-change: opacity, transform;
 }
 
 /* Mobile responsive header text */
@@ -171,7 +188,13 @@ header p {
   width: 70px;
   height: 70px;
   padding: .25rem 0 0 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              height 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Optimize for animations */
+  will-change: width, height, padding, transform;
 }
 
 /* Mobile responsive logo */
